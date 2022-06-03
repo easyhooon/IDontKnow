@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">HackathonProject</string>
+    <string name="back_close">뒤로가기를 한 번 더 누르면 종료됩니다.</string>
+    <string name="network_error">인터넷 연결이 원활하지 않습니다.\n연결 상태를 확인해주세요.</string>
+    <string name="all_confirm">확인</string>
+
+</resources>
