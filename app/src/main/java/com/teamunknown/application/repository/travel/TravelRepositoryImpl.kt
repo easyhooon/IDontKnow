@@ -6,7 +6,7 @@ import com.teamunknown.application.usecase.travel.TravelRepository
 import com.teamunknown.application.utils.Result
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
-import timber.log.Timber
+
 
 class TravelRepositoryImpl(
     private val travelLocalDataSource: TravelLocalDataSource
@@ -16,11 +16,11 @@ class TravelRepositoryImpl(
         travelLocalDataSource.getTravels(travelId)
     }
 
-    override suspend fun setTravelRecords(travel: Travel): Result<Unit> {
-        return Result.Success(travelLocalDataSource.insertTravel(travel))
+    override suspend fun setTravelRecords(travel: Travel) {
+        travelLocalDataSource.insertTravel(travel)
     }
 
-    override suspend fun clearTravelRecords(): Result<Unit> {
-        return Result.Success(travelLocalDataSource.clearTravel())
+    override suspend fun clearTravelRecords() {
+        travelLocalDataSource.clearTravel()
     }
 }

@@ -29,7 +29,7 @@ class TravelRecordFragment : DataBindingFragment<FragmentTravelRecordBinding>(R.
     }
 
     private fun initView() {
-        travelRecordViewModel.getTravelList(0L)
+        travelRecordViewModel.getTravelList(1654342935108)
     }
 
     private fun initListener() {

@@ -1,14 +1,11 @@
 package com.teamunknown.application.screen.main.record
 
-import androidx.annotation.StringRes
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.teamunknown.application.R
 import com.teamunknown.application.model.Travel
 import com.teamunknown.application.screen.BaseViewModel
 import com.teamunknown.application.usecase.travel.GetTravelRecordsUseCase
+import com.teamunknown.application.usecase.travel.SetTravelRecordsUseCase
 import com.teamunknown.application.utils.Event
 import com.teamunknown.application.utils.Result
 import com.teamunknown.application.utils.isLoading
@@ -22,7 +19,8 @@ import javax.inject.Inject
 
 @HiltViewModel
 class TravelRecordViewModel @Inject constructor(
-    private val getTravelRecordsUseCase: GetTravelRecordsUseCase
+    private val getTravelRecordsUseCase: GetTravelRecordsUseCase,
+    private val setTravelRecordsUseCase: SetTravelRecordsUseCase
 ) : BaseViewModel() {
 
     private val _travelList = MutableStateFlow<List<Travel>>(emptyList())

@@ -86,4 +86,6 @@ dependencies {
     implementation "com.jakewharton.timber:timber:$timber_version"
     // Toasty
     implementation "com.github.GrenderG:Toasty:$toasty_version"
+    // ZoneDateTime
+    implementation "com.jakewharton.threetenabp:threetenabp:$zone_version"
 }
