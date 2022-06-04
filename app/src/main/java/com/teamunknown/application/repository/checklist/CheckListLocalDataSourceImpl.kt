@@ -1,16 +1,19 @@
-package com.teamunknown.application.repository.travel
+package com.teamunknown.application.repository.checklist
 
 import com.teamunknown.application.model.CheckList
 import com.teamunknown.application.repository.CheckListLocalDataSource
 import com.teamunknown.application.repository.TravelDatabase
+import com.teamunknown.application.utils.Result
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.flow
 
 
 class CheckListLocalDataSourceImpl(
     private val travelDatabase: TravelDatabase
 ) : CheckListLocalDataSource {
-    override suspend fun getCheckList(travelId: Long): Flow<List<CheckList>> {
-        return travelDatabase.checkListDao().getCheckList(travelId)
+
+    override fun getCheckList(travelId: Long): Flow<Result<List<CheckList>>> = flow {
+        Result.Success(travelDatabase.checkListDao().getCheckList(travelId))
     }
 
     override suspend fun insertCheckList(checkList: CheckList) {

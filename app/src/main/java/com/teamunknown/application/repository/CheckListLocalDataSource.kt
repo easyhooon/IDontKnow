@@ -1,11 +1,12 @@
 package com.teamunknown.application.repository
 
 import com.teamunknown.application.model.CheckList
+import com.teamunknown.application.utils.Result
 import kotlinx.coroutines.flow.Flow
 
 interface CheckListLocalDataSource {
 
-    suspend fun getCheckList(travelId: Long) : Flow<List<CheckList>>
+    fun getCheckList(travelId: Long) : Flow<Result<List<CheckList>>>
 
     suspend fun insertCheckList(checkList: CheckList)
 

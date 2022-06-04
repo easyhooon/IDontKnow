@@ -2,7 +2,9 @@ package com.teamunknown.application.di
 
 import com.teamunknown.application.repository.CheckListLocalDataSource
 import com.teamunknown.application.repository.TravelDatabase
-import com.teamunknown.application.repository.travel.CheckListLocalDataSourceImpl
+import com.teamunknown.application.repository.TravelLocalDataSource
+import com.teamunknown.application.repository.checklist.CheckListLocalDataSourceImpl
+import com.teamunknown.application.repository.travel.TravelLocalDataSourceImpl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -15,6 +17,9 @@ class DataModule {
 
     @Singleton
     @Provides
-    internal fun provideCheckListLocalDataSource(travelDatabase: TravelDatabase)
-    : CheckListLocalDataSource = CheckListLocalDataSourceImpl(travelDatabase)
+    fun provideTravelLocalDataSource(travelDatabase: TravelDatabase): TravelLocalDataSource = TravelLocalDataSourceImpl(travelDatabase)
+
+    @Singleton
+    @Provides
+    fun provideCheckListLocalDataSource(travelDatabase: TravelDatabase): CheckListLocalDataSource = CheckListLocalDataSourceImpl(travelDatabase)
 }

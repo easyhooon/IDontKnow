@@ -10,12 +10,15 @@ data class Diary(
     @PrimaryKey(autoGenerate = true)
     @Transient
     val id: Int = 0,
-    @ColumnInfo(name="travel_id")
-    val travelId: Long,
+    @ColumnInfo(name = "travel_id")
+    val travelId: Long?,
+    @Transient
     @ColumnInfo(name = "diary_title")
     val diaryTitle: String,
+    @Transient
     @ColumnInfo(name = "diary_date")
     val diaryDate: String,
+    @Transient
     @ColumnInfo(name = "diary_description")
     val diaryDescription: String
 )
