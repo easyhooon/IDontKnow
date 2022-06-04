@@ -8,6 +8,7 @@ import com.teamunknown.application.model.CheckList
 import com.teamunknown.application.model.Diary
 import com.teamunknown.application.model.Travel
 import com.teamunknown.application.repository.checklist.CheckListDao
+import com.teamunknown.application.repository.travel.TravelDao
 
 @Database(
     entities = [
@@ -19,6 +20,8 @@ import com.teamunknown.application.repository.checklist.CheckListDao
     exportSchema = false
 )
 abstract class TravelDatabase : RoomDatabase() {
+
+    abstract fun travelDao() : TravelDao
 
     abstract fun checkListDao() : CheckListDao
 
