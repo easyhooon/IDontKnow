@@ -30,7 +30,5 @@
             android:name="com.teamunknown.application.screen.main.MainActivity"
             android:exported="true"
             android:screenOrientation="portrait" />
-
-
     </application>
 </manifest>

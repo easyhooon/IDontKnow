@@ -3,10 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/airport.xml" value="0.212" />
         <entry key="app/src/main/res/font/font_bold.xml" value="0.3425925925925926" />
         <entry key="app/src/main/res/layout/activity_intro.xml" value="0.3614583333333333" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.33177083333333335" />
         <entry key="app/src/main/res/layout/fragment_intro.xml" value="0.3614583333333333" />
+        <entry key="app/src/main/res/layout/fragment_setting.xml" value="0.3416666666666667" />
+        <entry key="app/src/main/res/layout/fragment_travel.xml" value="0.32221221923828125" />
+        <entry key="app/src/main/res/layout/fragment_travel_list.xml" value="0.2967498779296875" />
+        <entry key="app/src/main/res/layout/fragment_travel_record.xml" value="0.3614583333333333" />
       </map>
     </option>
   </component>
