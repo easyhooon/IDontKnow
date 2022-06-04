@@ -7,4 +7,18 @@
 
     <string name="travel_tab_record">기록</string>
     <string name="travel_tab_setting">설정</string>
+
+    <string name="travel_write_title">여행 기록</string>
+    <string name="travel_write_title_description">여행의 제목을 알려주세요.</string>
+    <string name="travel_write_edit_hint">ex) 제주도 당일치기!</string>
+    <string name="travel_write_start_date_description">언제 출발하나요?</string>
+    <string name="travel_write_date_button">날짜를 입력해주세요</string>
+    <string name="travel_write_end_date_description">언제 돌아오나요?</string>
+    <string name="travel_write_create">생성하기</string>
+    <string name="travel_write_error">모두 적어주셔야 합니다</string>
+
+    <string name="time_patten">yyyy-MM-dd</string>
+
+    <string name="travel_check_list">체크리스트</string>
+    <string name="travel_diary">여행일지</string>
 </resources>

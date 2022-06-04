@@ -20,4 +20,5 @@
         <item name="colorOnSurface">@color/colorGray</item>
         <item name="actionMenuTextColor">@color/colorLightBlue</item>
     </style>
+
 </resources>

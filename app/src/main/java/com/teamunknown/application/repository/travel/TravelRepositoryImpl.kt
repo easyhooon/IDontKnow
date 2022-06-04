@@ -12,8 +12,8 @@ class TravelRepositoryImpl(
     private val travelLocalDataSource: TravelLocalDataSource
 ) : TravelRepository {
 
-    override fun getTravelRecords(travelId: Long?): Flow<Result<List<Travel>>> = flow {
-        travelLocalDataSource.getTravels(travelId)
+    override fun getTravelRecords() : Flow<Result<List<Travel>>> = flow {
+        travelLocalDataSource.getTravels()
     }
 
     override suspend fun setTravelRecords(travel: Travel) {

@@ -7,14 +7,14 @@ import com.teamunknown.application.utils.Result
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.map
-import timber.log.Timber
+
 
 class TravelLocalDataSourceImpl(
     private val travelDatabase: TravelDatabase
 ) : TravelLocalDataSource {
 
-    override fun getTravels(travelId: Long?): Flow<Result<List<Travel>>> = flow {
-        travelDatabase.travelDao().getTravels(travelId).map {
+    override fun getTravels() : Flow<Result<List<Travel>>> = flow {
+        travelDatabase.travelDao().getTravels().map {
             emit(Result.Success(it))
         }
     }

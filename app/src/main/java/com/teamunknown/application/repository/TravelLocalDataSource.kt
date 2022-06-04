@@ -6,7 +6,7 @@ import com.teamunknown.application.utils.Result
 
 interface TravelLocalDataSource {
 
-    fun getTravels(travelId: Long?) : Flow<Result<List<Travel>>>
+    fun getTravels() : Flow<Result<List<Travel>>>
 
     suspend fun insertTravel(travel : Travel)
 

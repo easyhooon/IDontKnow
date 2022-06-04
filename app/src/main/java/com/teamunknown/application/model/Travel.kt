@@ -12,7 +12,7 @@ data class Travel(
     @Transient
     val id: Int = 0,
     @Transient
-    @ColumnInfo(name="travel_id")
+    @ColumnInfo(name = "travel_id")
     val travelId: Long?,
     @Transient
     @ColumnInfo(name = "travel_title")
@@ -22,5 +22,5 @@ data class Travel(
     val startDate: String,
     @Transient
     @ColumnInfo(name = "end_date")
-    val endDate: String,
+    val endDate: String
 )

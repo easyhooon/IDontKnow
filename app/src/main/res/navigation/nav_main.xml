@@ -9,5 +9,14 @@
         android:id="@+id/travelFragment"
         android:name="com.teamunknown.application.screen.main.TravelFragment"
         android:label="TravelListFragment"
-        tools:layout="@layout/fragment_travel" />
+        tools:layout="@layout/fragment_travel">
+
+        <action
+            android:id="@+id/action_travelFragment_to_travelWriteActivity"
+            app:destination="@id/travelWriteActivity" />
+    </fragment>
+
+    <activity
+        android:id="@+id/travelWriteActivity"
+        android:name="com.teamunknown.application.screen.travelwrite.TravelWriteActivity" />
 </navigation>

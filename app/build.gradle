@@ -87,5 +87,5 @@ dependencies {
     // Toasty
     implementation "com.github.GrenderG:Toasty:$toasty_version"
     // ZoneDateTime
-    implementation "com.jakewharton.threetenabp:threetenabp:$zone_version"
+    implementation 'com.jakewharton.threetenabp:threetenabp:1.0.3'
 }

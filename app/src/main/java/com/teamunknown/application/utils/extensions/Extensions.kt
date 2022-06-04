@@ -7,6 +7,7 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 import kotlin.math.roundToInt
 
@@ -22,6 +23,12 @@ fun Int.toPx(context: Context): Int = (this * context.resources.displayMetrics.d
 fun <T : ViewDataBinding> T.executeAfter(block: T.() -> Unit) {
     block()
     executePendingBindings()
+}
+
+fun Job?.cancelIfActive() {
+    if (this?.isActive == true) {
+        cancel()
+    }
 }
 
 inline fun Fragment.launchAndRepeatWithViewLifecycle(

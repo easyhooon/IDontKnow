@@ -27,9 +27,15 @@
         <item name="android:textSize">16dp</item>
     </style>
 
+    <style name="TextAppearance.unknown.Body2">
+        <item name="android:fontFamily">@font/font_demi_light</item>
+        <item name="fontFamily">@font/font_demi_light</item>
+        <item name="android:textSize">14dp</item>
+    </style>
+
     <style name="Widget.Custom.Button" parent="Widget.MaterialComponents.Button">
         <item name="shapeAppearance">@style/ShapeAppearance.LargeComponent</item>
-        <item name="android:layout_height">55dp</item>
+        <item name="android:layout_height">44dp</item>
         <item name="android:layout_width">0dp</item>
         <item name="android:insetBottom">0dp</item>
         <item name="android:insetTop">0dp</item>
@@ -38,5 +44,29 @@
         <item name="android:textAppearance">@style/TextAppearance.unknown.HeadLine2</item>
         <item name="backgroundTint">@color/select_button</item>
         <item name="android:textColor">@color/select_button_text</item>
+    </style>
+
+    <style name="TextAppearance.TravelNote" parent="TextAppearance.AppCompat" />
+
+    <style name="TextAppearance.TravelNote.Caption">
+        <item name="android:fontFamily">@font/font_regular</item>
+        <item name="fontFamily">@font/font_regular</item>
+        <item name="android:textSize">12dp</item>
+    </style>
+
+    <style name="Widget.TravelNote.TextButton" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="shapeAppearance">?shapeAppearanceSmallComponent</item>
+        <item name="android:textAppearance">@style/TextAppearance.TravelNote.Caption</item>
+        <item name="android:minWidth">0dp</item>
+    </style>
+
+    <style name="ShapeAppearance.TravelNote.CustomComponent" parent="ShapeAppearance.MaterialComponents">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">8dp</item>
+    </style>
+
+    <style name="Widget.TravelNote.CardView" parent="Widget.MaterialComponents.CardView">
+        <item name="shapeAppearance">@style/ShapeAppearance.TravelNote.CustomComponent</item>
+        <item name="cardElevation">0dp</item>
     </style>
 </resources>

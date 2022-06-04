@@ -13,12 +13,10 @@ import kotlinx.coroutines.flow.flowOf
 open class GetTravelRecordsUseCase @Inject constructor(
     private val travelRepository: TravelRepository,
     @IoDispatcher ioDispatcher: CoroutineDispatcher
-) : FlowUseCase<GetTravelRecordsUseCase.Params, List<Travel>>(ioDispatcher) {
+) : FlowUseCase<Unit, List<Travel>>(ioDispatcher) {
 
-    override fun execute(params: Params): Flow<Result<List<Travel>>> {
-        return travelRepository.getTravelRecords(
-            travelId = params.travelId
-        ).flatMapConcat { travelList ->
+    override fun execute(params: Unit): Flow<Result<List<Travel>>> {
+        return travelRepository.getTravelRecords().flatMapConcat { travelList ->
             when (travelList) {
                 is Result.Loading -> flowOf(travelList)
                 is Result.Success -> flowOf(Result.Success(travelList.data))
@@ -26,6 +24,4 @@ open class GetTravelRecordsUseCase @Inject constructor(
             }
         }
     }
-
-    data class Params(val travelId: Long?)
 }

@@ -3,6 +3,7 @@ package com.teamunknown.application
 import android.app.Application
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.content.res.ResourcesCompat
+import com.jakewharton.threetenabp.AndroidThreeTen
 import dagger.hilt.android.HiltAndroidApp
 import es.dmoral.toasty.Toasty
 import timber.log.Timber
@@ -13,6 +14,7 @@ class UnknownApp : Application() {
     override fun onCreate() {
         super.onCreate()
 
+        AndroidThreeTen.init(this)
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
         initToasty()
         initTimber()

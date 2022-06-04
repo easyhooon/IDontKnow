@@ -6,7 +6,7 @@ import kotlinx.coroutines.flow.Flow
 
 interface TravelRepository {
 
-    fun getTravelRecords(travelId: Long?) : Flow<Result<List<Travel>>>
+    fun getTravelRecords() : Flow<Result<List<Travel>>>
 
     suspend fun setTravelRecords(travel: Travel)
 

@@ -7,8 +7,8 @@ import kotlinx.coroutines.flow.Flow
 @Dao
 interface TravelDao {
 
-    @Query("SELECT * FROM travel WHERE travel_id is NULL OR id = :travelId")
-    fun getTravels(travelId: Long?): Flow<List<Travel>>
+    @Query("SELECT * FROM Travel")
+    fun getTravels(): Flow<List<Travel>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertTravel(travel : Travel)
