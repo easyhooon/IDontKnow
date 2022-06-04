@@ -7,6 +7,7 @@
         <entry key="app/src/main/res/font/font_bold.xml" value="0.3425925925925926" />
         <entry key="app/src/main/res/layout/activity_intro.xml" value="0.3614583333333333" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.33177083333333335" />
+        <entry key="app/src/main/res/layout/cell_travel_record.xml" value="0.30885416666666665" />
         <entry key="app/src/main/res/layout/fragment_intro.xml" value="0.3614583333333333" />
         <entry key="app/src/main/res/layout/fragment_setting.xml" value="0.3416666666666667" />
         <entry key="app/src/main/res/layout/fragment_travel.xml" value="0.32221221923828125" />

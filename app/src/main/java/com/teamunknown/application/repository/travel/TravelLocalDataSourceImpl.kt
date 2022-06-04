@@ -6,13 +6,17 @@ import com.teamunknown.application.repository.TravelLocalDataSource
 import com.teamunknown.application.utils.Result
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
+import kotlinx.coroutines.flow.map
+import timber.log.Timber
 
 class TravelLocalDataSourceImpl(
     private val travelDatabase: TravelDatabase
 ) : TravelLocalDataSource {
 
     override fun getTravels(travelId: Long?): Flow<Result<List<Travel>>> = flow {
-        Result.Success(travelDatabase.travelDao().getTravels(travelId))
+        travelDatabase.travelDao().getTravels(travelId).map {
+            emit(Result.Success(it))
+        }
     }
 
     override suspend fun insertTravel(travel: Travel) {

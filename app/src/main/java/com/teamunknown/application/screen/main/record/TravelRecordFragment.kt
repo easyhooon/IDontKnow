@@ -7,6 +7,7 @@ import com.teamunknown.application.DataBindingFragment
 import com.teamunknown.application.R
 import com.teamunknown.application.databinding.FragmentTravelRecordBinding
 import dagger.hilt.android.AndroidEntryPoint
+import timber.log.Timber
 
 
 @AndroidEntryPoint
@@ -28,7 +29,7 @@ class TravelRecordFragment : DataBindingFragment<FragmentTravelRecordBinding>(R.
     }
 
     private fun initView() {
-
+        travelRecordViewModel.getTravelList(0L)
     }
 
     private fun initListener() {
