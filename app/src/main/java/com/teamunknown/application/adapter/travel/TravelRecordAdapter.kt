@@ -46,7 +46,7 @@ class TravelRecordAdapter(
             travel = getItem(position)
         }
 
-        holder.binding.ivExpand.setOnClickListener {
+        holder.itemView.setOnClickListener {
             val parent = holder.itemView.parent as? ViewGroup ?: return@setOnClickListener
             val expanded = holder.binding.isExpanded ?: false
             val transition = TransitionInflater.from(holder.itemView.context).inflateTransition(R.transition.expand_button)

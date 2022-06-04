@@ -1,9 +1,11 @@
 package com.teamunknown.application.di
 
 import com.teamunknown.application.repository.CheckListLocalDataSource
+import com.teamunknown.application.repository.DiaryLocalDataSource
 import com.teamunknown.application.repository.TravelDatabase
 import com.teamunknown.application.repository.TravelLocalDataSource
 import com.teamunknown.application.repository.checklist.CheckListLocalDataSourceImpl
+import com.teamunknown.application.repository.diary.DiaryLocalDataSourceImpl
 import com.teamunknown.application.repository.travel.TravelLocalDataSourceImpl
 import com.teamunknown.application.repository.travel.TravelRepositoryImpl
 import com.teamunknown.application.usecase.travel.TravelRepository
@@ -27,5 +29,11 @@ class DataModule {
 
     @Singleton
     @Provides
+    fun provideDiaryLocalDataSource(travelDatabase: TravelDatabase) : DiaryLocalDataSource = DiaryLocalDataSourceImpl(travelDatabase)
+
+    @Singleton
+    @Provides
     fun provideTravelRecordRepository(travelLocalDataSource: TravelLocalDataSource): TravelRepository = TravelRepositoryImpl(travelLocalDataSource)
+
+
 }

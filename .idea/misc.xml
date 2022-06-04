@@ -16,6 +16,8 @@
         <entry key="app/src/main/res/layout/fragment_intro.xml" value="0.2209874471028646" />
         <entry key="app/src/main/res/layout/fragment_setting.xml" value="0.3416666666666667" />
         <entry key="app/src/main/res/layout/fragment_travel.xml" value="0.32221221923828125" />
+        <entry key="app/src/main/res/layout/fragment_travel_detail.xml" value="0.3745468139648438" />
+        <entry key="app/src/main/res/layout/fragment_travel_diary.xml" value="0.19895833333333332" />
         <entry key="app/src/main/res/layout/fragment_travel_list.xml" value="0.2967498779296875" />
         <entry key="app/src/main/res/layout/fragment_travel_record.xml" value="0.2700826009114583" />
         <entry key="app/src/main/res/layout/fragment_travel_setting.xml" value="0.3350357507660878" />

@@ -25,12 +25,6 @@ fun <T : ViewDataBinding> T.executeAfter(block: T.() -> Unit) {
     executePendingBindings()
 }
 
-fun Job?.cancelIfActive() {
-    if (this?.isActive == true) {
-        cancel()
-    }
-}
-
 inline fun Fragment.launchAndRepeatWithViewLifecycle(
     minActiveState: Lifecycle.State = Lifecycle.State.STARTED,
     crossinline block: suspend CoroutineScope.() -> Unit

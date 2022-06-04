@@ -8,6 +8,7 @@ import com.teamunknown.application.model.CheckList
 import com.teamunknown.application.model.Diary
 import com.teamunknown.application.model.Travel
 import com.teamunknown.application.repository.checklist.CheckListDao
+import com.teamunknown.application.repository.diary.DiaryDao
 import com.teamunknown.application.repository.travel.TravelDao
 
 @Database(
@@ -21,9 +22,11 @@ import com.teamunknown.application.repository.travel.TravelDao
 )
 abstract class TravelDatabase : RoomDatabase() {
 
-    abstract fun travelDao() : TravelDao
+    abstract fun travelDao(): TravelDao
 
-    abstract fun checkListDao() : CheckListDao
+    abstract fun checkListDao(): CheckListDao
+
+    abstract fun diaryDao(): DiaryDao
 
     companion object {
         private const val dbName = "TRAVEL_DB"

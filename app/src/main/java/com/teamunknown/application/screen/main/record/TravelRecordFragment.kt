@@ -62,7 +62,9 @@ class TravelRecordFragment : DataBindingFragment<FragmentTravelRecordBinding>(R.
                 }
             }
         }
-
+        travelRecordViewModel.loading.observe(viewLifecycleOwner) {
+            Timber.e("로그 $it")
+        }
         travelRecordViewModel.navigateToCreateTravel.observe(viewLifecycleOwner, EventObserver {
             findNavController().safeNavigate(TravelFragmentDirections.actionTravelFragmentToTravelWriteActivity())
         })

@@ -1,10 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <FrameLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:background="@color/colorLightBlue"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:divider="@drawable/divider_e0e0e0"
+        android:orientation="vertical"
+        android:showDividers="middle|end">
 
-    </FrameLayout>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_version"
+            style="@style/Widget.TravelNote.TextButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end|center_vertical"
+            android:text="version 1.0"
+            android:textAppearance="@style/TextAppearance.unknown.Body1" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_clear"
+            style="@style/Widget.TravelNote.TextButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end|center_vertical"
+            android:text="모든 데이터 삭제"
+            android:textAppearance="@style/TextAppearance.unknown.Body1" />
+    </LinearLayout>
 </layout>
