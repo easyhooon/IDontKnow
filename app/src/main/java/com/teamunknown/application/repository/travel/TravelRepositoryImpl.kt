@@ -5,18 +5,15 @@ import com.teamunknown.application.repository.TravelLocalDataSource
 import com.teamunknown.application.usecase.travel.TravelRepository
 import com.teamunknown.application.utils.Result
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.flow
 
 
 class TravelRepositoryImpl(
     private val travelLocalDataSource: TravelLocalDataSource
 ) : TravelRepository {
 
-    override fun getTravelRecords() : Flow<Result<List<Travel>>> = flow {
-        travelLocalDataSource.getTravels()
-    }
+    override fun getTravelRecords() : Flow<Result<List<Travel>>> = travelLocalDataSource.getTravels()
 
-    override suspend fun setTravelRecords(travel: Travel) {
+    override suspend fun setTravelRecord(travel: Travel) {
         travelLocalDataSource.insertTravel(travel)
     }
 

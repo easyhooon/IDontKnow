@@ -2,10 +2,12 @@ package com.teamunknown.application.screen.travelwrite
 
 import androidx.lifecycle.*
 import com.teamunknown.application.R
+import com.teamunknown.application.model.ImageModel
 import com.teamunknown.application.model.Travel
 import com.teamunknown.application.screen.BaseViewModel
 import com.teamunknown.application.usecase.travel.SetTravelRecordsUseCase
 import com.teamunknown.application.utils.Event
+import com.teamunknown.application.utils.succeeded
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import org.threeten.bp.ZonedDateTime
@@ -104,10 +106,17 @@ class TravelWriteViewModel @Inject constructor(
                             travelId = System.currentTimeMillis(),
                             travelTitle = travelTitle.value!!,
                             startDate = startDateTime.value.toString(),
-                            endDate = endDateTime.value.toString()
+                            endDate = endDateTime.value.toString(),
+                            imageUrl = ImageModel.randomTitleImage()
                         )
                     )
-                )
+                ).let {
+                    if (it.succeeded) {
+                        _navigateToCancel.value = Event(Unit)
+                    } else {
+                        _error.value = Event(R.string.all_error)
+                    }
+                }
             }
         }
     }

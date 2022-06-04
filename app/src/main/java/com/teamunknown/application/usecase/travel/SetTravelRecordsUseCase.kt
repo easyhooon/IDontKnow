@@ -12,7 +12,7 @@ open class SetTravelRecordsUseCase @Inject constructor(
 ) : UseCase<SetTravelRecordsUseCase.Params, Unit>(ioDispatcher) {
 
     override suspend fun execute(params: Params) {
-        travelRepository.setTravelRecords(params.travel)
+        travelRepository.setTravelRecord(params.travel)
     }
 
     data class Params(val travel: Travel)

@@ -62,7 +62,7 @@
 
     <style name="ShapeAppearance.TravelNote.CustomComponent" parent="ShapeAppearance.MaterialComponents">
         <item name="cornerFamily">rounded</item>
-        <item name="cornerSize">8dp</item>
+        <item name="cornerSize">16dp</item>
     </style>
 
     <style name="Widget.TravelNote.CardView" parent="Widget.MaterialComponents.CardView">

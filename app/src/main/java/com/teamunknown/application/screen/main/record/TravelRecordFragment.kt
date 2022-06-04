@@ -16,6 +16,7 @@ import com.teamunknown.application.utils.extensions.safeNavigate
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
+import timber.log.Timber
 
 
 @AndroidEntryPoint

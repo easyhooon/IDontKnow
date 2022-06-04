@@ -6,6 +6,7 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.view.View
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.teamunknown.application.DataBindingFragment
 import com.teamunknown.application.R
 import com.teamunknown.application.databinding.FragmentTravelWriteBinding
@@ -33,6 +34,14 @@ class TravelWriteFragment : DataBindingFragment<FragmentTravelWriteBinding>(R.la
 
     private fun initListener() {
         with(dataBinding) {
+            toolbar.apply {
+                setNavigationOnClickListener {
+                    if (!findNavController().navigateUp()) {
+                        requireActivity().finish()
+                    }
+                }
+            }
+
             etTravelTitle.addTextChangedListener(
                 object : TextWatcher {
                     override fun beforeTextChanged(text: CharSequence?, p1: Int, p2: Int, p3: Int) {}
@@ -87,6 +96,14 @@ class TravelWriteFragment : DataBindingFragment<FragmentTravelWriteBinding>(R.la
                 }
                 updateDate(it.year, it.monthValue.minus(1), it.dayOfMonth)
             }.show()
+        })
+
+        travelWriteViewModel.navigateToCancel.observe(viewLifecycleOwner, EventObserver {
+            if (!findNavController().navigateUp()) {
+                requireActivity().finish()
+            } else {
+                findNavController().navigateUp()
+            }
         })
     }
 }

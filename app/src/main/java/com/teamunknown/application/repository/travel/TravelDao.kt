@@ -7,7 +7,7 @@ import kotlinx.coroutines.flow.Flow
 @Dao
 interface TravelDao {
 
-    @Query("SELECT * FROM Travel")
+    @Query("SELECT * FROM Travel ORDER BY id DESC")
     fun getTravels(): Flow<List<Travel>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)

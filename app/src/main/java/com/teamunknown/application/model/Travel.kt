@@ -8,7 +8,7 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "travel")
 data class Travel(
     @ColumnInfo(name = "id")
-    @PrimaryKey(autoGenerate = false)
+    @PrimaryKey(autoGenerate = true)
     @Transient
     val id: Int = 0,
     @Transient
@@ -22,5 +22,8 @@ data class Travel(
     val startDate: String,
     @Transient
     @ColumnInfo(name = "end_date")
-    val endDate: String
+    val endDate: String,
+    @Transient
+    @ColumnInfo(name ="image_url")
+    val imageUrl : String
 )

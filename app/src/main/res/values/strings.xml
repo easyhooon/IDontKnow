@@ -8,6 +8,8 @@
     <string name="travel_tab_record">기록</string>
     <string name="travel_tab_setting">설정</string>
 
+    <string name="travel_date_range">%s - %s</string>
+
     <string name="travel_write_title">여행 기록</string>
     <string name="travel_write_title_description">여행의 제목을 알려주세요.</string>
     <string name="travel_write_edit_hint">ex) 제주도 당일치기!</string>

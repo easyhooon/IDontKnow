@@ -8,7 +8,7 @@ interface TravelRepository {
 
     fun getTravelRecords() : Flow<Result<List<Travel>>>
 
-    suspend fun setTravelRecords(travel: Travel)
+    suspend fun setTravelRecord(travel: Travel)
 
     suspend fun clearTravelRecords()
 }

@@ -14,6 +14,7 @@ import com.teamunknown.application.model.ImageModel
 import com.teamunknown.application.model.Travel
 import com.teamunknown.application.screen.main.record.TravelRecordViewModel
 import com.teamunknown.application.utils.extensions.executeAfter
+import timber.log.Timber
 
 class TravelRecordAdapter(
     private val adapterLifecycleOwner: LifecycleOwner,
@@ -36,18 +37,16 @@ class TravelRecordAdapter(
     }
 
     override fun onBindViewHolder(holder: TravelRecordViewHolder, position: Int) {
-        val wasExpanded = position == travelRecordViewModel.expandedPosition
-        if (wasExpanded)
-            travelRecordViewModel.setPreviousExpandedPosition(position)
+        val wasExpanded = (position == travelRecordViewModel.expandedPosition)
+        if (wasExpanded) travelRecordViewModel.setPreviousExpandedPosition(position)
 
         holder.binding.executeAfter {
             lifecycleOwner = adapterLifecycleOwner
             viewModel = travelRecordViewModel
-            imageUrl = ImageModel.randomTitleImage()
             travel = getItem(position)
         }
 
-        holder.itemView.setOnClickListener {
+        holder.binding.ivExpand.setOnClickListener {
             val parent = holder.itemView.parent as? ViewGroup ?: return@setOnClickListener
             val expanded = holder.binding.isExpanded ?: false
             val transition = TransitionInflater.from(holder.itemView.context).inflateTransition(R.transition.expand_button)
