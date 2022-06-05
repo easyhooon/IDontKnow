@@ -14,9 +14,19 @@
         <action
             android:id="@+id/action_travelFragment_to_travelWriteActivity"
             app:destination="@id/travelWriteActivity" />
+
+        <action
+            android:id="@+id/action_travelFragment_to_travelCheckListFragment"
+            app:destination="@id/travelCheckListFragment" />
     </fragment>
 
     <activity
         android:id="@+id/travelWriteActivity"
         android:name="com.teamunknown.application.screen.travelwrite.TravelWriteActivity" />
+
+    <fragment
+        android:id="@+id/travelCheckListFragment"
+        android:name="com.teamunknown.application.screen.main.checklist.TravelCheckListFragment"
+        android:label="TravelCheckListFragment" />
+
 </navigation>

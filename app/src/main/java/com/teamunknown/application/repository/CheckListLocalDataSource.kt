@@ -10,7 +10,9 @@ interface CheckListLocalDataSource {
 
     suspend fun insertCheckList(checkList: CheckList)
 
-    suspend fun clearCheckList(checkLists:List<CheckList>)
+    suspend fun updateCheckList(checkList: CheckList)
+
+    suspend fun clearCheckList(checkLists:CheckList)
 
     suspend fun clearCheckList()
 }

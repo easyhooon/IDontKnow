@@ -19,4 +19,8 @@
     <activity
         android:id="@+id/mainActivity"
         android:name="com.teamunknown.application.screen.main.MainActivity" />
+
+    <activity
+        android:id="@+id/travelCheckListActivity"
+        android:name="com.teamunknown.application.screen.main.checklist.TravelCheckListActivity" />
 </navigation>

@@ -17,4 +17,8 @@ abstract class DataBindingFragment<T : ViewDataBinding>(@LayoutRes private val l
         dataBinding = DataBindingUtil.inflate(inflater, layoutResId, container, false)
         return dataBinding.root
     }
+
+    protected inline fun bind(block: T.() -> Unit) {
+        dataBinding.apply(block)
+    }
 }

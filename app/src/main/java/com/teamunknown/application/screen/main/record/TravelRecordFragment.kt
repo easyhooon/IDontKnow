@@ -2,6 +2,7 @@ package com.teamunknown.application.screen.main.record
 
 import android.os.Bundle
 import android.view.View
+import androidx.core.os.bundleOf
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -67,6 +68,12 @@ class TravelRecordFragment : DataBindingFragment<FragmentTravelRecordBinding>(R.
         }
         travelRecordViewModel.navigateToCreateTravel.observe(viewLifecycleOwner, EventObserver {
             findNavController().safeNavigate(TravelFragmentDirections.actionTravelFragmentToTravelWriteActivity())
+        })
+
+        travelRecordViewModel.navigateToCheckList.observe(viewLifecycleOwner, EventObserver { travel ->
+            findNavController().navigate(R.id.action_travelFragment_to_travelCheckListFragment, bundleOf(
+                "travelItem" to travel.travelId
+            ))
         })
     }
 

@@ -120,6 +120,7 @@
                     style="@style/Widget.Custom.Button"
                     android:text="@string/travel_check_list"
                     app:backgroundTint="@color/colorLightBlue"
+                    android:onClick="@{()->viewModel.navigateToCheckList(travel)}"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />

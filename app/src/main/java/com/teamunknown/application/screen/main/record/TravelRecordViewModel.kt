@@ -42,6 +42,10 @@ class TravelRecordViewModel @Inject constructor(
     val navigateToCreateTravel: LiveData<Event<Unit>>
         get() = _navigateToCreateTravel
 
+    private val _navigateToCheckList = MutableLiveData<Event<Travel>>()
+    val navigateToCheckList: LiveData<Event<Travel>>
+        get() = _navigateToCheckList
+
     init {
         getTravelList()
     }
@@ -77,5 +81,9 @@ class TravelRecordViewModel @Inject constructor(
 
     fun navigateToCreateTravel() {
         _navigateToCreateTravel.value = Event(Unit)
+    }
+
+    fun navigateToCheckList(travel: Travel) {
+        _navigateToCheckList.value = Event(travel)
     }
 }

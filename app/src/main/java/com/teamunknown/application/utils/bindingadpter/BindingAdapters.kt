@@ -6,11 +6,17 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.databinding.BindingAdapter
+import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.teamunknown.application.R
+import com.teamunknown.application.model.CheckList
+import com.teamunknown.application.screen.main.checklist.TravelCheckListAdapter
 import com.teamunknown.application.utils.TimeUtil
 import org.threeten.bp.ZoneId
 import org.threeten.bp.ZonedDateTime
+import timber.log.Timber
+import com.teamunknown.application.utils.Result
+import com.teamunknown.application.utils.data
 
 
 @BindingAdapter("isInvisible")
@@ -51,8 +57,10 @@ fun dateParse(view: TextView, startDate: String?, endDate: String?) {
         return
     } else {
         val startDatePatten = "yyyy.MM.dd"
-        val startZonedDateTime = ZonedDateTime.parse(startDate).withZoneSameInstant(ZoneId.systemDefault())
-        val endZonedDateTime = ZonedDateTime.parse(endDate).withZoneSameInstant(ZoneId.systemDefault())
+        val startZonedDateTime =
+            ZonedDateTime.parse(startDate).withZoneSameInstant(ZoneId.systemDefault())
+        val endZonedDateTime =
+            ZonedDateTime.parse(endDate).withZoneSameInstant(ZoneId.systemDefault())
 
         view.text = if (startZonedDateTime.year == endZonedDateTime.year) {
             val endDatePatten = "MM.dd"
@@ -78,4 +86,20 @@ private fun isValidContextForGlide(context: Context): Boolean {
         return !context.isFinishing
     }
     return true
+}
+
+@BindingAdapter("checkListAdapter")
+fun RecyclerView.bindAdapter(adapter: RecyclerView.Adapter<*>) {
+    this.adapter = adapter
+}
+
+@BindingAdapter("checkList")
+fun RecyclerView.bindCheckList(checkList: Result<List<CheckList>>) {
+    val boundAdapter = this.adapter
+    if (boundAdapter is TravelCheckListAdapter) {
+        Timber.tag("checkList").d("${checkList.data}")
+        boundAdapter.submitList(checkList.data)
+    } else {
+        Timber.tag("checkList").d("데이터 안들어옴")
+    }
 }

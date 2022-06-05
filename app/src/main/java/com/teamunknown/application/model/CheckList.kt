@@ -11,12 +11,12 @@ data class CheckList(
     @Transient
     val id: Int = 0,
     @Transient
-    @ColumnInfo(name="travel_id")
-    val travelId: Long?,
+    @ColumnInfo(name = "travel_id")
+    val travelId: Long? = 0,
     @Transient
     @ColumnInfo(name = "check_item")
-    val checkItem: String,
+    val checkItem: String = "",
     @Transient
     @ColumnInfo(name = "is_checkable")
-    val isCheckable: Boolean
+    val isCheckable: Boolean = false
 )

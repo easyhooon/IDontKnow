@@ -23,4 +23,5 @@
 
     <string name="travel_check_list">체크리스트</string>
     <string name="travel_diary">여행일지</string>
+    <string name="register_checklist">항목 추가</string>
 </resources>

@@ -6,8 +6,10 @@ import com.teamunknown.application.repository.TravelDatabase
 import com.teamunknown.application.repository.TravelLocalDataSource
 import com.teamunknown.application.repository.checklist.CheckListLocalDataSourceImpl
 import com.teamunknown.application.repository.diary.DiaryLocalDataSourceImpl
+import com.teamunknown.application.repository.checklist.CheckListRepositoryImpl
 import com.teamunknown.application.repository.travel.TravelLocalDataSourceImpl
 import com.teamunknown.application.repository.travel.TravelRepositoryImpl
+import com.teamunknown.application.usecase.checklist.CheckListRepository
 import com.teamunknown.application.usecase.travel.TravelRepository
 import dagger.Module
 import dagger.Provides
@@ -35,5 +37,7 @@ class DataModule {
     @Provides
     fun provideTravelRecordRepository(travelLocalDataSource: TravelLocalDataSource): TravelRepository = TravelRepositoryImpl(travelLocalDataSource)
 
-
+    @Singleton
+    @Provides
+    fun provideTravelCheckListRepository(travelCheckListLocalDataSource: CheckListLocalDataSource): CheckListRepository = CheckListRepositoryImpl(travelCheckListLocalDataSource)
 }
